@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Judol Spam Remover",
+  "version": "1.1",
+  "description": "Membasmi Komen Spam Judol di Video Youtube.",
+  "permissions": ["scripting", "storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch?v=*"],
+      "js": ["content.js"]
+    }
+  ]
+}
